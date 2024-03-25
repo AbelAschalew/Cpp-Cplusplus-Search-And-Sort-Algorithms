@@ -1,0 +1,56 @@
+/* Dear Fellow Programmers I Hope You 
+Find This & Other Programs I Released 
+Helpful. Nothing Pleasure Me Morethan 
+Helping Others. I Expect Only One Thing 
+From You, Show Your Support By Giving a 
+Star For This Repository If You Found 
+These Program/Programs Beneficial. 
+Thank You!*/
+
+#include <iostream>
+using namespace std;
+
+int main () {
+	int n;
+	cout << "How many numbers?:" << endl;
+	cin >> n;
+	
+	// Declaring dynamic array
+	int* a = new int[n];
+	
+	// Taking input
+	for (int i=0;i<n;i++) {
+		cout << "Enter Number:" << endl;
+		cin >> a[i];
+	}
+	
+	// Displaying unsorted data
+	cout << endl << "********** Unsorted Data **********" << endl;
+	for (int i=0;i<n;i++){
+		cout << a[i] << "   ";
+	}
+  cout << endl << endl;
+	
+	// Sorting Ascendingly with SELECTION SORT
+	int i, k;
+	int max; //variable to store the index of the largest number
+	for (i=0; i<n; i++) {
+		max = 0;
+		for (k=0; k<n-i; k++){
+			if (a[k] > a[max]) { 
+				max = k;
+			}
+		}
+		//swaping the largest number with the last element in array
+		int temp = a[max];
+		a[max] = a[n-i-1];
+		a[n-i-1] = temp;
+	}
+	
+	// Displaying sorted data
+	cout << "********** Sorted Data(Descendingly) **********" << endl;
+	for (int i=0;i<n;i++){
+		cout << a[i] << "   ";
+	}
+	cout << endl << endl;
+}
